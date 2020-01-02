@@ -34,7 +34,7 @@ const readFilteredLists = () => {
                                 let todoTasks = []
                                 for(j = 0; j < docs[i].todos.length; j++){
                                     const task = await readTaskById(docs[i].todos[j])
-                                    // console.log(task.data.title)
+                                    console.log('pushing task')
                                     todoTasks.push(task.data.title)
                                 }
                                 listList.push(

@@ -54,4 +54,4 @@ const deleteList = (listId) => {
     return iou
 };
 
-module.exports = {deleteTask}
+module.exports = {deleteList}
