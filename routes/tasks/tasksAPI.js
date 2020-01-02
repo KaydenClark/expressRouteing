@@ -33,7 +33,7 @@ router.put('/:id', async (req, res) => {
     res.send(updatedTask)
 })
 
-app.delete('/:taskId', async (req, res) => {
+router.delete('/:taskId', async (req, res) => {
     await testConnection()
     const taskId = req.params.taskId
     const removeTask = await deleteTask(taskId)

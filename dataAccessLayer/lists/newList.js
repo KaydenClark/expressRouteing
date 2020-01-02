@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const ObjectId = require("mongodb").ObjectId;
+// const ObjectId = require("mongodb").ObjectId;
 require('dotenv').config()
 
 
@@ -21,6 +21,7 @@ const newList = (list) => {
                 reject(err)
             }
             else { 
+                // console.log(list)
                 console.log("Connected to server for Creation of a List");
                 const db = client.db(dbName);
                 // Get the contacts collection

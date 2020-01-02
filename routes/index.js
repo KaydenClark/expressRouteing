@@ -5,6 +5,7 @@ const router = express.Router();
 router.use(cors())
 
 router.use('/lists', require('./lists/listsAPI'))
+router.use('/tasks', require('./tasks/tasksAPI'))
 
 router.get('/test', (req, res) =>{
     res.send('Hello World')
