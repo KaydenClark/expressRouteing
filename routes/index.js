@@ -3,6 +3,7 @@ const cors = require('cors')
 const router = express.Router();
 
 router.use(cors())
+router.use(express.json())
 
 router.use('/lists', require('./lists/listsAPI'))
 router.use('/tasks', require('./tasks/tasksAPI'))
