@@ -11,7 +11,7 @@ const settings = {
     useUnifiedTopology: true
 }
 
-const updateTask = (id, task) => {
+const updateTaskComplete = (id, task) => {
     let iou = new Promise((resolve, reject) => {
         
         // Use connect method to connect to the server
@@ -42,4 +42,4 @@ const updateTask = (id, task) => {
     return iou
 }
 
-module.exports = {updateTask}
+module.exports = {updateTaskComplete}

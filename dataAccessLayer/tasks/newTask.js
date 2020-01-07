@@ -27,7 +27,7 @@ const newTask = (task, listId) => {
                 // Get the contacts collection
                 const collection = db.collection('ToDoTasks');
                 // Insert a document
-                collection.insertOne(task, async function (err, result) {
+                collection.insertOne(task, async (err, result) => {
                     if(err){
                         reject(err)
                     }
@@ -39,7 +39,7 @@ const newTask = (task, listId) => {
                         // Get the contacts collection
                         const collection = db.collection('ToDoLists');
                         // Insert a document
-                        collection.updateOne({ "_id": ObjectId(listId) }, 
+                        await collection.updateOne({ "_id": ObjectId(listId) }, 
                             { $push: { todos: newTaskId } },
                             function (err, result) {
                                 console.log("mongo update callback")

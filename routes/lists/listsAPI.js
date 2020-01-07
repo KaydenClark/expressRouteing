@@ -27,7 +27,7 @@ router.get('/:listId', async (req, res) => {
 
 router.post('/', async (req, res) => {
     const new_list = req.body
-    console.log(req.body)
+    // console.log(req.body)
     const list = await newList(new_list)
     res.send(list)
 })

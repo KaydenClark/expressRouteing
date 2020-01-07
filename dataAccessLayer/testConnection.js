@@ -12,6 +12,7 @@ const settings = {
 }
 
 const testConnection = () => {
+    console.log('connectiing...')
     const iou = new Promise((resolve, reject) => {
         // Use connect method to connect to the server
         MongoClient.connect(url, settings, function (err, client) {
@@ -30,5 +31,8 @@ const testConnection = () => {
     })
     return iou
 }
+
+
+testConnection()
 
 module.exports = {testConnection}

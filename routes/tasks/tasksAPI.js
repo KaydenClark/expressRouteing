@@ -4,7 +4,8 @@ const router = express.Router();
 const {readTasks} = require('../../dataAccessLayer/tasks/readTasks')
 const {readTaskById} = require('../../dataAccessLayer/tasks/readTaskById')
 const {newTask} = require('../../dataAccessLayer/tasks/newTask')
-const {updateTask} = require('../../dataAccessLayer/tasks/updateTask')
+const {updateTaskbyId} = require('../../dataAccessLayer/tasks/updateTaskbyId')
+const {updateTaskComplete} = require('../../dataAccessLayer/tasks/updateTaskComplete')
 const {deleteTask} = require('../../dataAccessLayer/tasks/deleteTask')
 const {testConnection} = require('../../dataAccessLayer/testConnection')
 
@@ -26,10 +27,18 @@ router.post('/:listId', async (req, res) => {
     res.send(task)
 })
 
-router.put('/:id', async (req, res) => {
+router.patch('/:id/titleChange', async (req, res) => {
     const new_task = req.body
+    console.log(new_task.title)
     const id = req.params.id
-    const updatedTask = await updateTask(id, new_task.complete)
+    const updatedTask = await updateTaskbyId(id, new_task.title)
+    res.send(updatedTask)
+})
+
+router.patch('/:id', async (req, res) => {
+    const completeness = req.body
+    const id = req.params.id
+    const updatedTask = await updateTaskComplete(id, completeness)
     res.send(updatedTask)
 })
 
