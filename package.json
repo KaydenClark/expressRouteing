@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "test": "npm test",
-    "start": "nodemon main.js app.js .env"
+    "start": "nodemon main.js .env"
   },
   "author": "Kayden Clark",
   "license": "ISC",
